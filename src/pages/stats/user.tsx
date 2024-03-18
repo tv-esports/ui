@@ -44,7 +44,7 @@ const StatsUserPage: React.FC = () => {
             } else if (userResponse.status === 404) {
                 setError('User not found');
             } else {
-                setError('An error occurred. Please try again.');
+                setError('User not found.');
             }
 
             // Process Discord data response
@@ -52,7 +52,7 @@ const StatsUserPage: React.FC = () => {
                 const discordData = await discordResponse.json();
                 setUserData((prevUserData: string[]) => ({ ...prevUserData, username: discordData.username }));
             } else {
-                setError('An error occurred. Please try again.');
+                setError('User not found.');
             }
 
             setShowMenu(false);
